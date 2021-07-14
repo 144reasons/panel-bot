@@ -1,0 +1,23 @@
+{
+  "name": "panel-bot",
+  "version": "1.0.0",
+  "description": "A bot to interact with ControlPanel",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/somerandomcloud/panel-bot.git"
+  },
+  "author": "SamuOnDisc",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/somerandomcloud/panel-bot/issues"
+  },
+  "homepage": "https://github.com/somerandomcloud/panel-bot#readme",
+  "dependencies": {
+    "controlpanel-api": "^1.0.0",
+    "discord.js": "^12.5.3"
+  }
+}
