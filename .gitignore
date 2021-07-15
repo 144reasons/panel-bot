@@ -102,3 +102,13 @@ dist
 
 # TernJS port file
 .tern-port
+
+# Config & .env (if present)
+.env
+config.json
+
+# Lint
+
+
+# package-lock
+package-lock.json

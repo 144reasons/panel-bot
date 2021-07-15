@@ -1,9 +1,9 @@
 {
     "prefix": "p!",
-    "owners": ["702973430449832038", "joe"],
-    "token": "ODY0OTk3MTgwMDY2NDk2NTMy.YO9lZg._PC7Y2VLVGUUAVvSWvCX42nzXrQ",
-    "cpApi": "oszHsy_bWl8jLWtZPdMQ8ZMcsOGjC_ixeA1UZhTU-VJYpkh0",
-    "panelUrl": "http://127.0.0.1",
+    "owners": ["god", "joe"],
+    "token": "YOURDISCORDTOKEN",
+    "cpApi": "YOURCONTROLPANELAPITOKEN",
+    "panelUrl": "THEURITOYOURPAGE",
     "userInfo": {
         "accountName": true,
         "accountID": true,
