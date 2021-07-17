@@ -2,14 +2,5 @@
     "prefix": "p!",
     "owners": ["god", "joe"],
     "token": "YOURDISCORDTOKEN",
-    "cpApi": "YOURCONTROLPANELAPITOKEN",
-    "panelUrl": "THEURITOYOURPAGE",
-    "userInfo": {
-        "accountName": true,
-        "accountID": true,
-        "accountRole": false, 
-        "accountBalance": true,
-        "accountEmailVerified": true,
-        "accountDiscordVerified": false
-    }
+    "botColour": "#C3B1E1"
 }

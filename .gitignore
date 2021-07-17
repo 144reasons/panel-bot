@@ -112,3 +112,4 @@ config.json
 
 # package-lock
 package-lock.json
+db/main.sqlite
