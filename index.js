@@ -1,39 +1,25 @@
 // ──────────────────────────────────────────────────────────────────── [ Start of index.js & dependencies ]
 
-const Discord = require('discord.js');
-const { setOptions } = require('controlpanel-api');
-const chalk = require('chalk');
 const fs = require('fs');
-const { inspect } = require('util');
-const Keyv = require('keyv');
-const { token, cpApi, panelUrl } = require('./config.json');
-const db = new Keyv('sqlite://./db/main.sqlite', { namespace: 'db' });
-db.on('error', err => console.log('Connection Error', err));
+const { Client, Intents, Collection } = require('discord.js');
+const { token } = require('./config.json');
 
-// ──────────────────────────────────────────────────────────────────── [ Client start ]
+const client = new Client({ intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGES] });
+client.commands = new Collection();
 
-const intents = ['GUILDS', 'GUILD_MEMBERS'];
-const client = new Discord.Client();
 const eventFiles = fs
 	.readdirSync('./events')
 	.filter((file) => file.endsWith('.js'));
-client.commands = new Discord.Collection();
-require('discord-buttons')(client);
-client.buttons = new Discord.Collection();
-
-// ──────────────────────────────────────────────────────────────────── [ Event handler ]
 
 for (const file of eventFiles) {
 	const event = require(`./events/${file}`);
 	if (event.once) {
-		client.once(event.name, (...args) => event.execute(...args, client, db));
+		client.once(event.name, (...args) => event.execute(...args, client));
 	}
 	else {
-		client.on(event.name, (...args) => event.execute(...args, client, db));
+		client.on(event.name, (...args) => event.execute(...args, client));
 	}
 }
-
-// ──────────────────────────────────────────────────────────────────── [ Part of command handler ]
 
 const { readdirSync } = require('fs');
 const commandFolders = readdirSync('./commands');
@@ -47,33 +33,5 @@ commandFolders.forEach((x) => {
 		client.commands.set(command.name, command);
 	});
 });
-
-// ──────────────────────────────────────────────────────────────────── [ Button Handler ]
-
-fs.readdir('./buttons/', (err, files) => {
-	if (err) console.log(err);
-
-	const jsfile = files.filter((f) => f.split('.').pop() === 'js');
-	if (jsfile.length <= 0) {
-		console.log('No buttons.');
-		return;
-	}
-
-	jsfile.forEach((f) => {
-		const props2 = require(`./buttons/${f}`);
-		client.buttons.set(f, props2);
-	});
-});
-
-// ──────────────────────────────────────────────────────────────────── [ Pretty exiting reminder ]
-
-process.on('SIGINT', async () => {
-	console.log(chalk.bold.red('Process ended! Exiting...'));
-	process.exit();
-});
-
-// ──────────────────────────────────────────────────────────────────── [ Login ]
-
-module.exports = { client, db };
 
 client.login(token);

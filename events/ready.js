@@ -1,5 +1,3 @@
-const { botColour } = require('../config.json');
-
 module.exports = {
 	name: 'ready',
 	once: true,

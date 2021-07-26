@@ -17,13 +17,9 @@
   },
   "homepage": "https://github.com/somerandomcloud/panel-bot#readme",
   "dependencies": {
-    "@keyv/sqlite": "^2.0.2",
     "chalk": "^4.1.1",
     "controlpanel-api": "^1.2.1",
-    "discord-buttons": "^4.0.0",
-    "discord.js": "^12.5.3",
-    "djs-slash-commands": "^2.3.1",
-    "keyv": "^4.0.3"
+    "discord.js": "github:discordjs/discord.js"
   },
   "devDependencies": {
     "eslint": "^7.30.0"
