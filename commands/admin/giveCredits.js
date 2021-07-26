@@ -3,11 +3,9 @@ const { MessageEmbed } = require('discord.js');
 const { addUserCredits } = require('controlpanel-api');
 
 module.exports = {
-	name: 'setrole',
-	description: 'setrole',
-	ownersOnly: false,
+	name: 'givecredits',
+	description: 'givecredots',
 	category: 'Admin',
-	hidden: false,
 	async execute(message, client, args, db) {
 		if(!message.member.hasPermission('ADMINISTRATOR')) return message.channel.send('You arent an administrator!');
 

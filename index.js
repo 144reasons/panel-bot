@@ -12,9 +12,8 @@ db.on('error', err => console.log('Connection Error', err));
 
 // ──────────────────────────────────────────────────────────────────── [ Client start ]
 
-const client = new Discord.Client({
-	ws: { properties: { $browser: 'Discord iOS' } },
-});
+const intents = ['GUILDS', 'GUILD_MEMBERS'];
+const client = new Discord.Client();
 const eventFiles = fs
 	.readdirSync('./events')
 	.filter((file) => file.endsWith('.js'));
