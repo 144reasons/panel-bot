@@ -9,3 +9,7 @@
 - Added options command (s atm)
 - Added ping command (s & m)
 - Documentation on how to add commands will be added soon™️
+
+## 1.0.2
+
+- Added deploy and tdeploy. WARNING: deploy updates all commands globally, and will take about an hour to properly dish out. tdeploy will update the command in the test guild you specify in the config.

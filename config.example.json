@@ -2,5 +2,6 @@
     "prefix": "p!",
     "owners": ["god", "joe"],
     "token": "YOURDISCORDTOKEN",
-    "botColour": "#C3B1E1"
+    "botColour": "#C3B1E1",
+    "testguild": "1234569"
 }
