@@ -107,8 +107,9 @@ dist
 .env
 config.json
 
-# Lint
+# Various data
 
+data
 
 # package-lock
 package-lock.json

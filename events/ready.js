@@ -1,7 +1,8 @@
 module.exports = {
 	name: 'ready',
 	once: true,
-	execute(client) {
+	async execute(client) {
+
 		// ──────────────────────────────────────────────────────────────────── [ Sets the bots activity ]
 
 		client.user.setActivity('a Minecraft Tournament!', { type: 'COMPETING' });

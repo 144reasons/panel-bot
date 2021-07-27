@@ -1,20 +1,31 @@
+const { MessageActionRow, MessageSelectMenu } = require('discord.js');
+
 module.exports = {
 	name: 'interactionCreate',
-	once: true,
 	async execute(interaction, client) {
 
-		console.log(interaction);
+		if (interaction.isCommand()) {
+			if (!client.slashcommands.has(interaction.commandName)) return;
 
-		if (!interaction.isCommand()) return;
-
-		if (!client.commands.has(interaction.commandName)) return;
-
-		try {
-			await client.commands.get(interaction.commandName).execute(interaction, client);
+			try {
+				await client.slashcommands.get(interaction.commandName).execute(interaction, client);
+			}
+			catch (error) {
+				console.error(error);
+				await interaction.reply({ content: 'There was an error while executing this command! If this happens often, contact the developer!', ephemeral: true });
+			}
 		}
-		catch (error) {
-			console.error(error);
-			await interaction.reply({ content: 'There was an error while executing this command!', ephemeral: true });
+
+
+		if (interaction.isSelectMenu()) {
+			try {
+				await client.menus.get(`${interaction.customId}.js`).run(interaction, client);
+			}
+			catch (error) {
+				console.error(error);
+				await interaction.update({ content: 'There was an error while executing this command! If this happens often, contact the developer!', components: [], ephemeral: true });
+			}
+
 		}
 	},
 };
