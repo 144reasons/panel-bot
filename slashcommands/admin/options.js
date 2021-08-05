@@ -16,12 +16,12 @@ module.exports = {
 					.addOptions([
 						{
 							label: 'Account Info',
-							description: 'This is a description',
+							description: 'Edit the output of the cmd named accountinfo',
 							value: 'first_option',
 						},
 						{
 							label: 'Auto-delete after leave',
-							description: 'This is also a description',
+							description: 'awoo',
 							value: 'second_option',
 						},
 					]),

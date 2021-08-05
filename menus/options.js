@@ -2,7 +2,7 @@ const { MessageActionRow, MessageSelectMenu } = require('discord.js');
 
 module.exports.run = async (interaction, client) => {
 
-	const userinfo = [ 'accountid', 'accountname', 'accountrole', 'accountbalance,' ];
+	const userinfo = [ 'accountid', 'accountname', 'accountrole', 'accountbalance' ];
 
 	let options = [];
 

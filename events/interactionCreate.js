@@ -1,5 +1,3 @@
-const { MessageActionRow, MessageSelectMenu } = require('discord.js');
-
 module.exports = {
 	name: 'interactionCreate',
 	async execute(interaction, client) {

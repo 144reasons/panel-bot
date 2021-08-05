@@ -13,3 +13,21 @@
 ## 1.0.2
 
 - Added deploy and tdeploy. WARNING: deploy updates all commands globally, and will take about an hour to properly dish out. tdeploy will update the command in the test guild you specify in the config.
+
+## 1.0.3
+
+- Added eval
+- Added setapi and seturl, both slash commands so that you can run them without your api key getting leaked publicly by accident
+- Preparing to add a boost for credits system
+- Removed deploy and leaving tdeploy but bad, due to complication my brain cannot handle
+- Added invites command, which shows you how many people you have invited. This is EXTREMELY basic, due to complications my brain cannot handle. I will add a REAL invite manager once I have refreshed my mind and can actually create it.
+
+## 1.0.4
+
+- Added setbooster in preparation of boost for credits
+- Recoded tdeploy so that it deploys all commands with options include (GUILD-SPECIFIC ONLY)
+- Readded deploy so that it deploys all commands with options include (GLOBAL)
+- Did reconfiguring so that seturl, setapi, and setbooster can be easily deployed without any complications
+- Added userinfo
+- Fixed options
+- Cleanup

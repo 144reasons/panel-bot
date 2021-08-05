@@ -1,19 +1,19 @@
-const { MessageActionRow, MessageSelectMenu } = require('discord.js');
-const { testguild } = require('../../config.json');
+const { testguild, owners } = require('../../config.json');
 
 module.exports = {
 	name: 'tdeploy',
-	description: 'Deploy all slash commands in a certain guild',
-	ownersOnly: true,
-	category: 'Owner',
-	async execute(message, client) {
+	description: 'tdeploy',
+	async execute(message, client, args) {
+
+		if(message.author.id !== owners) return message.channel.send('This command isnt for you!');
+
 		const scommands = client.slashcommands;
 
 		let toDep = [];
 
-		function autoDeploy(value, key) {
+		function autoDeploy(value) {
 
-			const pushme = { name: value.name, description: value.description };
+			const pushme = { name: value.name, description: value.description, options: value.options };
 
 			toDep = toDep.concat(pushme);
 		}

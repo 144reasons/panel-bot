@@ -4,7 +4,7 @@ const { token } = require('./config.json');
 const Josh = require('@joshdb/core');
 const provider = require('@joshdb/sqlite');
 
-const client = new Client({ intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGES] });
+const client = new Client({ intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGES, Intents.FLAGS.GUILD_MEMBERS, Intents.FLAGS.GUILD_INVITES] });
 client.slashcommands = new Collection();
 client.commands = new Collection();
 client.menus = new Collection();
@@ -19,8 +19,6 @@ guilddb.defer.then(() => {
 	console.log('Connected to the database.');
 	client.guilddb = guilddb;
 });
-
-client.guilddb = guilddb;
 
 const eventFiles = fs
 	.readdirSync('./events')
