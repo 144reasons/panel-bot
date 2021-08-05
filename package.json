@@ -1,6 +1,6 @@
 {
   "name": "panel-bot",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "A bot to interact with ControlPanel",
   "main": "index.js",
   "scripts": {
@@ -17,10 +17,11 @@
   },
   "homepage": "https://github.com/somerandomcloud/panel-bot#readme",
   "dependencies": {
+    "@discordjs/rest": "^0.1.0-canary.0",
     "@joshdb/core": "^1.2.5",
     "@joshdb/sqlite": "^1.1.9",
     "controlpanel-api": "^1.4.2",
-    "discord.js": "github:discordjs/discord.js"
+    "discord.js": "^13.0.0-dev.t1628165339.3eb4140"
   },
   "devDependencies": {
     "eslint": "^7.30.0"

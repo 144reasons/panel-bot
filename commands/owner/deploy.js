@@ -20,9 +20,6 @@ module.exports = {
 
 		scommands.forEach(autoDeploy);
 
-		console.log(toDep);
-
 		const commands = await client.application?.commands.create(toDep);
-		console.log(commands);
 	},
 };

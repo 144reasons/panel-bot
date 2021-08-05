@@ -13,7 +13,7 @@ module.exports = {
 
 			if (typeof evaled !== 'string') evaled = require('util').inspect(evaled);
 
-			message.channel.send(`\`\`\`${evaled}\`\`\``);
+			message.channel.send({ content: `\`\`\`${evaled}\`\`\`` });
 		}
 		catch (err) {
 			message.channel.send(`\`ERROR\` \`\`\`xl\n${err}\n\`\`\``);

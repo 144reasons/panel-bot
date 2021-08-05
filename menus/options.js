@@ -29,4 +29,27 @@ module.exports.run = async (interaction, client) => {
 	}
 
 
+	if(interaction.values.includes('second_option')) {
+		let tof;
+
+		if(!await client.guilddb.get(`${interaction.guild.id}_bfc`) || await client.guilddb.get(`${interaction.guild.id}_bfc`) === 'false') tof = 'false';
+		else tof = 'true';
+
+		const bfc = new MessageActionRow()
+			.addComponents(
+				new MessageSelectMenu()
+					.setCustomId('bfc')
+					.setPlaceholder('Nothing selected')
+					.addOptions([
+						{
+							label: `Enabled: ${tof}`,
+							description: 'Enable/disable boost for credits',
+							value: 'second_option',
+						},
+					]),
+			);
+
+		await interaction.update({ content: 'Select to enable true or false', components: [bfc] });
+	}
+
 };

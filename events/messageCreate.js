@@ -12,6 +12,8 @@ module.exports = {
 
 		if (!client.commands.has(command)) return;
 
+		if(!await client.guilddb.get(`${message.guild.id}_logs`)) message.channel.send('**Note:** Remind the owner of the server to add a logs channel, using the slash command `/setlogs`');
+
 		try {
 			const cmd = client.commands.get(command);
 			if (cmd.ownersOnly && message.author.id !== owners) {return message.channel.send('This command isnt made for you!');}

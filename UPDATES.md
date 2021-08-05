@@ -31,3 +31,9 @@
 - Added userinfo
 - Fixed options
 - Cleanup
+
+## 1.0.5
+- j122j noticed security flaw, aka dont use my wrapper for multiple servers! This bot is secure thought...
+- Added boost for credits, and all the needed options to configure it!
+- Updated discord.js version, so that all commands actually make sense to the api
+- Started on multiserver wrapper

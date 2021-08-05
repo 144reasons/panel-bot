@@ -1,4 +1,4 @@
-const { getUserData, setOptions } = require('controlpanel-api');
+const { getUserData } = require('../../utils/wrapper');
 const { MessageEmbed } = require('discord.js');
 const { botColour } = require('../../config.json');
 
@@ -6,8 +6,6 @@ module.exports = {
 	name: 'userinfo',
 	description: 'Check user info',
 	async execute(message, client) {
-
-		setOptions(await client.guilddb.get(`${message.guild.id}_control_url`), await client.guilddb.get(`${message.guild.id}_control_api`));
 
 		let accountid;
 		let accountname;
@@ -19,7 +17,7 @@ module.exports = {
 		if(await client.guilddb.get(`${message.guild.id}_accountrole`) == 'true') accountrole = true;
 		if(await client.guilddb.get(`${message.guild.id}_accountbalance`) == 'true') accountbalance = true;
 
-		getUserData(message.author.id).then(res => {
+		getUserData(await client.guilddb.get(`${message.guild.id}_control_url`), await client.guilddb.get(`${message.guild.id}_control_api`), message.author.id).then(res => {
 
 			const embed = new MessageEmbed()
 				.setTitle('Your User Info')

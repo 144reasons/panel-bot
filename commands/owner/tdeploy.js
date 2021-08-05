@@ -20,9 +20,6 @@ module.exports = {
 
 		scommands.forEach(autoDeploy);
 
-		console.log(toDep);
-
 		const commands = await client.guilds.cache.get(testguild)?.commands.set(toDep);
-		console.log(commands);
 	},
 };

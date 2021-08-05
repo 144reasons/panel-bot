@@ -20,8 +20,8 @@ module.exports = {
 							value: 'first_option',
 						},
 						{
-							label: 'Auto-delete after leave',
-							description: 'awoo',
+							label: 'Boost for credits',
+							description: 'Enable boost for credits',
 							value: 'second_option',
 						},
 					]),
