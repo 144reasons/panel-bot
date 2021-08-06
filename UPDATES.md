@@ -37,3 +37,8 @@
 - Added boost for credits, and all the needed options to configure it!
 - Updated discord.js version, so that all commands actually make sense to the api
 - Started on multiserver wrapper
+
+## 1.0.6
+- Added clearbalance and givecredits
+- Added addUserCredits, clearUserBalance and getUsers
+- Cleanup

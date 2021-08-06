@@ -30,8 +30,6 @@ module.exports = {
 
 		const logschannel = interaction.options.getChannel('log');
 
-		console.log(logschannel);
-
 		client.guilddb.set(`${interaction.guild.id}_bfc_role`, boosterrole.id);
 
 		client.guilddb.set(`${interaction.guild.id}_bfc_channel`, logschannel.id);

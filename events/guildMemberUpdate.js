@@ -20,6 +20,7 @@ module.exports = {
 					console.log(err);
 
 					if(err.code === 'ECONNREFUSED') return channel.send('ECONNREFUSED! Is the server down?');
+					else channel.send('There was an error :(');
 				});
 
 				channel.send(`New booster! **${newMember.user.username}** just boosted, and received ${await client.guilddb.get(`${oldMember.guild.id}_bfc_amount`)} credits!`);

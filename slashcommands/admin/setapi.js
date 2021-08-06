@@ -1,4 +1,4 @@
-const { setOptions, getUsers } = require('controlpanel-api');
+const { getUsers } = require('../../utils/wrapper');
 
 module.exports = {
 	name: 'setapi',
@@ -20,9 +20,7 @@ module.exports = {
 
 		if(!url) return interaction.reply({ content: 'Your token cannot be validated. You need to set your panels url using /seturl, so that we can check if your token is valid', ephemeral: true });
 
-		setOptions(url, string);
-
-		getUsers().then(async res => {
+		getUsers(url, string).then(async res => {
 			client.guilddb.set(`${interaction.guild.id}_control_api`, string);
 
 			await interaction.reply({ content: 'Set the api token!', ephemeral: true });
