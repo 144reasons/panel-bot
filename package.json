@@ -20,7 +20,7 @@
     "@joshdb/core": "^1.2.5",
     "@joshdb/sqlite": "^1.1.9",
     "axios": "^0.21.1",
-    "discord.js": "^13.0.0-dev.t1628165339.3eb4140"
+    "discord.js": "^13.1.0"
   },
   "devDependencies": {
     "eslint": "^7.30.0"

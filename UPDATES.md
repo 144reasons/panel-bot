@@ -42,3 +42,10 @@
 - Added clearbalance and givecredits
 - Added addUserCredits, clearUserBalance and getUsers
 - Cleanup
+
+## 1.0.7
+- Added help command
+- Started working on issue [#2](https://github.com/somerandomcloud/panel-bot/issues/2)
+- Added my util file
+- Removed dev version of discord.js, added stable branch (v13.1.0)
+- Updated README to be more readable and have more info
